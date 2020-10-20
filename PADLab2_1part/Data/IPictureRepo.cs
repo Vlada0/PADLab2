@@ -12,7 +12,6 @@ namespace PADLab2_1part.Data
         Picture GetPictureById(int id);
         Picture CreatePicture(Picture picture);
         Picture Update(Picture picture);
-
         void Delete(int id);
     }
 }

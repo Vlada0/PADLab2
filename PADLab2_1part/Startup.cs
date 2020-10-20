@@ -26,7 +26,7 @@ namespace PADLab2_1part
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers().AddXmlDataContractSerializerFormatters();
+            services.AddControllers();
             services.AddScoped<IPictureRepo, MockPictureRepo>();
         }
 

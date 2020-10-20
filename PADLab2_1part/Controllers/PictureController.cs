@@ -22,7 +22,7 @@ namespace PADLab2_1part.Controllers
             _repo = repo;
         }
 
-        [HttpGet(".{format}"), FormatFilter]
+        [HttpGet]
         public ActionResult GetPictures()
         {
             var picturesItems = _repo.GetPictures();
@@ -30,7 +30,7 @@ namespace PADLab2_1part.Controllers
             return Ok(picturesItems.AsEnumerable()); 
         }
 
-        [HttpGet("{id}.{format}"), FormatFilter]
+        [HttpGet("{id}")]
         public ActionResult<Picture> GetPicture(int id)
         {
             var picturesItem = _repo.GetPictureById(id);
@@ -38,14 +38,14 @@ namespace PADLab2_1part.Controllers
             return Ok(picturesItem);
         }
 
-        [HttpPost(".{format}"), FormatFilter]
+        [HttpPost]
         public ActionResult <Picture> Post(Picture picture)
         {
             var _picture = _repo.CreatePicture(picture);
             return Ok(_picture);
         }
 
-        [HttpPut(".{format}"), FormatFilter]
+        [HttpPut]
         public ActionResult<Picture> Put(Picture picture)
         {
             var _picture = _repo.Update(picture);
